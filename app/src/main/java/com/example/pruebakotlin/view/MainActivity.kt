@@ -1,4 +1,4 @@
-package com.example.pruebakotlin
+package com.example.pruebakotlin.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
