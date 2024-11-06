@@ -2,7 +2,7 @@ package com.example.pruebakotlin.domain.model
 
 import com.example.pruebakotlin.data.model.MovieModel
 
-data class Movie(
+data class MovieItem(
     val id: Int,
     val title: String,
     val poster: String,
@@ -10,5 +10,5 @@ data class Movie(
     val releaseDate: String
 )
 
-fun MovieModel.toDomain() = Movie(id, title, poster, overview, releaseDate)
+fun MovieModel.toDomain() = MovieItem(id, title, poster, overview, releaseDate)
 
