@@ -4,16 +4,17 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pruebakotlin.data.MovieRepository
 import com.example.pruebakotlin.data.model.MovieModel
 import com.example.pruebakotlin.domain.GetMovieImageUseCase
 import com.example.pruebakotlin.domain.GetMoviesUseCase
 import kotlinx.coroutines.launch
 
-class MovieViewModel : ViewModel() {
+class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel() {
 
     val movieModel = MutableLiveData<MovieModel>()
-    var getMoviesUseCase = GetMoviesUseCase()
-    var getMovieImageUseCase = GetMovieImageUseCase()
+    var getMoviesUseCase = GetMoviesUseCase(movieRepository)
+    var getMovieImageUseCase = GetMovieImageUseCase(movieRepository)
 
 
     fun getAllMovies() {

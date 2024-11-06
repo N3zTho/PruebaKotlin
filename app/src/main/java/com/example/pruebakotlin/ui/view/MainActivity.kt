@@ -15,10 +15,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.Observer
 import com.example.pruebakotlin.ui.theme.PruebaKotlinTheme
 import com.example.pruebakotlin.ui.viewmodel.MovieViewModel
+import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
 
-    private val movieViewModel : MovieViewModel by viewModels()
+    private val movieViewModel : MovieViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
         })
 
 //        movieViewModel.getMovieImage(1184918)
-         movieViewModel.getAllMovies()
+//         movieViewModel.getAllMovies()
 
         setContent {
             PruebaKotlinTheme {

@@ -4,9 +4,8 @@ import com.example.pruebakotlin.data.model.ImageModel
 import com.example.pruebakotlin.data.model.MovieModel
 import com.example.pruebakotlin.data.network.MovieService
 
-class MovieRepository {
+class MovieRepository(private val api:MovieService) {
 
-    private val api = MovieService()
 
     suspend fun getAllMovies(): List<MovieModel> {
         val response = api.getMovies().map { movie ->
