@@ -27,7 +27,8 @@ class MainActivity : ComponentActivity() {
 
         })
 
-        movieViewModel.onCreate()
+//        movieViewModel.getMovieImage(1184918)
+         movieViewModel.getAllMovies()
 
         setContent {
             PruebaKotlinTheme {
