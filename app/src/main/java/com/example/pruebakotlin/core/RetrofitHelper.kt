@@ -1,5 +1,6 @@
 package com.example.pruebakotlin.core
 
+import android.util.Log
 import com.example.pruebakotlin.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -9,14 +10,16 @@ object RetrofitHelper {
 
     fun getRetrofit(): Retrofit {
 
-        val client : OkHttpClient = OkHttpClient.Builder()
+        val client: OkHttpClient = OkHttpClient.Builder()
             .addInterceptor { chain ->
+
                 val request = chain.request().newBuilder()
-                    .addHeader("Accept","application/json")
+                    .addHeader("Accept", "application/json")
                     .addHeader("Authorization", "Bearer ${BuildConfig.TOKEN_API}")
                     .build()
 
                 val response = chain.proceed(request)
+
 
                 response
             }

@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.example.pruebakotlin.ui.theme.PruebaKotlinTheme
 import com.example.pruebakotlin.ui.viewmodel.MovieViewModel
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
 
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
         })
 
 //        movieViewModel.getMovieImage(1184918)
-//         movieViewModel.getAllMovies()
+         movieViewModel.getAllMovies()
 
         setContent {
             PruebaKotlinTheme {

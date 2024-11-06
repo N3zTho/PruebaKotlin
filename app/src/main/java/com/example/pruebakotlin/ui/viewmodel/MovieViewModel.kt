@@ -24,7 +24,7 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
         }
     }
 
-    fun getMovieImage(id:Int) {
+    fun getMovieImage(id: Int) {
         viewModelScope.launch {
             val result = getMovieImageUseCase(id)
             Log.i("IMAGE", result?.image ?: "Sin imagen")
